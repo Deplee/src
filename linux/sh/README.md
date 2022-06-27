@@ -8,4 +8,5 @@ README.md - **this file**
   b. cups-check-usb.sh - *loading USB quirks from* **"/usr/share/cups/usb"**
   c. system.sh - *update system & clear packages cache* **pacman**
   d. make-qemu.sh - *make qemu* **.img** *file*
+  e. templates - *folder with templates*
 ***
