@@ -1,5 +1,5 @@
 ***
-Reworked Cups version adaptated for Ubuntu 20.04.4 LTS
+Reworked [CUPS](https://github.com/OpenPrinting/cups) version adaptated for Ubuntu 20.04.4 LTS
 ***
 # Fixes
 
@@ -20,7 +20,7 @@ make clang cpp (9.4.0.9)
  - sudo ./configure (if you wanna prefix use ./configure --help etc.)
  - sudo make
  - cd backend/
- - sudo make 
+ - sudo make
  - sudo make usb
  - sudo make install
  - sudo systemctl restart cups
