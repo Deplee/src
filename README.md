@@ -38,4 +38,12 @@ README.MD - **this file**
     5. **docker-compose** (*file to run webb app 1-4*)
 
     6. **omi ubuntu** (*docker file to make ubuntu with pre-installed OMI*) 
+***
+# c/c++ folder
 
++ **C/C++ dummy projects (beta)**
+***
+# python folder
+
++ **Python dummy projects (beta)**
+***
