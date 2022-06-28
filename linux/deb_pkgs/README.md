@@ -58,9 +58,7 @@ DEBUG: list_devices
 DEBUG: libusb_get_device_list=3
 ```
 
-> Note: if your **output** is null(empty) or different then you should reinstall you **CUPS**
-
-> by following next commands:
+> Note: if your **output** is null(empty) or different then you should reinstall you **CUPS** by following next commands:
 
 ```
 sudo apt purge cups -y
