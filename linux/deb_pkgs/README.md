@@ -18,9 +18,34 @@ libgnutls28-dev libkrb5-dev libnss-mdns libpam-dev \
 libsystemd-dev libusb-1.0-0-dev zlib1g-dev
 ```
 
-Installation
+Checkup
 =======================================================================
-> Note: **recommended to disable usblp ban in /etc/modprobe.d/blacklist-usblp.conf**
+> Must be checked before installation by following commands
+
+```
+sudo /usr/lib/cups/backend/usb
+```
+
+Output it should be like
+
+```
+DEBUG: Loading USB quirks from "/usr/share/cups/usb".
+DEBUG: Loaded 95 quirks.
+DEBUG: list_devices
+DEBUG: libusb_get_device_list=3
+
+```
+
+> Note: if your *output* is null (empty) or different then you should reinstall you **CUPS** by following next commands
+
+```
+sudo apt purge cups -y
+sudo apt autoclean -y && sudo apt autoremove -y
+sudo apt install cups -y
+```
+Install
+=======================================================================
+> **Recommended to disable usblp ban in /etc/modprobe.d/blacklist-usblp.conf**
 
 ```
 sudo apt-get install autoconf build-essential libavahi-client-dev \
@@ -30,31 +55,13 @@ sudo apt update -y
 sudo dpkg -i cups-reworked-david_3.1-1_all.deb
 ```
 
-Testing
-=======================================================================
-**Preinstall test:**
-
-```
-sudo /usr/lib/cups/backend/usb
-```
-
-Output it should be like:
-
-```
-DEBUG: Loading USB quirks from "/usr/share/cups/usb".
-DEBUG: Loaded 95 quirks.
-DEBUG: list_devices
-DEBUG: libusb_get_device_list=3
-
-```
-
-**Postinstall test:**
+> Must be checked after installation by following commands
 
 ```
 sudo /usr/lib/cups/backend/USB
 ```
 
-Output it should be like:
+Output it should be like
 
 ```
 DEBUG: Loading USB quirks from "/usr/share/cups/usb".
@@ -63,7 +70,7 @@ DEBUG: list_devices
 DEBUG: libusb_get_device_list=3
 ```
 
-> Note: if your **output** is null(empty) or different then you should reinstall you **CUPS** by following next commands:
+> Note: if your *output* is null (empty) or different then you should reinstall you **CUPS** by following next commands:
 
 ```
 sudo apt purge cups -y
