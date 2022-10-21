@@ -12,6 +12,7 @@ test(5*2,6*3) */
 
 /* dir path */
 def path='//mnt//hdd//groovy//file_operations'
+import java.io.File
 /*
 
 /* files count
@@ -51,13 +52,16 @@ def ex = new File(path).eachFile {
 command = ["sh", "-c", "cp $main_name $result_name"]
 Runtime.getRuntime().exec((String[]) command.toArray())
     }
-println "[LOG]. $f File(s) copied"
-println ("Count of err extensions: $extension_err")
+    /* Log File */
+    File file = new File("copy.log")
+    file.write "$f File(s) copied.\n"
+    /* console output log */
+    println "[LOG]. $f File(s) copied"
+    println ("Count of err extensions: $extension_err")
     if (extension_err > 0) {
         prntln "[Error]. File with extensions is exists. Extension is: $extension"
         exit(1)
     }
-
 
 
 /* copy  windows
