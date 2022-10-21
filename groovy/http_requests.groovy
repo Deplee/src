@@ -32,6 +32,3 @@ println("Result of HTTP POST Request is:" + postRC);
 if (postRC.equals(200)) {
     println(post.getInputStream().getText());
 }
-
-
-
