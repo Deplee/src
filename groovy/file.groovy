@@ -30,6 +30,7 @@ println ("Count of files: $files_counter")
 int extension_err = 0
 int f = 0
 def name = []
+try {
 def ex = new File(path).eachFile {
     file_extension -> file_extension.getName().split("\\.")[-1]
     def extension = file_extension.getName().split("\\.")[-1]
@@ -40,29 +41,34 @@ def ex = new File(path).eachFile {
                 println (extension)
         } else if (extension ==~ "txt"){
             assert(extension ==~ null)
-    name.add(file_extension.getName())//.split("\\.")[0])
-    f++ }
+            name.add(file_extension.getName())//.split("\\.")[0])
+            f++ 
+    }
 }
-    if (extension_err > 0) {
-    prntln "[Error]. File with extensions is exists. Extension is: $extension" }
+    if (extension_err > 0){
+        prntln "[Error]. File with extensions is exists. Extension is: $extension"
+        }
     for (int i=0 ; i < f ; i++){
         println (name[i])
-    String main_name = name[i]
-    String result_name = '1_' + name[i] + '.bp'
-command = ["sh", "-c", "cp $main_name $result_name"]
-Runtime.getRuntime().exec((String[]) command.toArray())
+        String main_name = name[i]
+        String result_name = '1_' + name[i] + '.bp'
+        command = ["sh", "-c", "cp $main_name $result_name"]
+        Runtime.getRuntime().exec((String[]) command.toArray())
     }
     /* Log File */
-    File file = new File("copy.log")
-    file.write "$f File(s) copied.\n"
+File file = new File("copy.log")
+file.write "$f File(s) copied.\n"
     /* console output log */
-    println "[LOG]. $f File(s) copied"
-    println ("Count of err extensions: $extension_err")
-    if (extension_err > 0) {
-        prntln "[Error]. File with extensions is exists. Extension is: $extension"
-        exit(1)
-    }
-
+println "[LOG]. $f File(s) copied"
+println ("Count of err extensions: $extension_err")
+if (extension_err > 0){
+    prntln "[Error]. File with extensions is exists. Extension is: $extension"
+    exit(1)
+}
+}
+catch (Exception ex){
+    println "[ERROR]. Exception detected."
+}
 
 /* copy  windows
 
