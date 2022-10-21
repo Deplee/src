@@ -2,6 +2,12 @@
 ***
 README.MD - **this file**
 ***
+# groovy folder
+
++ Groovy stuff:
+    **file.groovy** - groovy files copies.
+
+        
 # linux folder
 
 + Some unix/linux stuff:
