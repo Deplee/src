@@ -49,7 +49,7 @@ def ex = new File(path).eachFile {
         prntln "[Error]. File with extensions is exists. Extension is: $extension"
         }
     for (int i=0 ; i < f ; i++){
-        println (name[i])
+        //println (name[i])
         String main_name = name[i]
         String result_name = '1_' + name[i] + '.bp'
         command = ["sh", "-c", "cp $main_name $result_name"]
@@ -57,7 +57,7 @@ def ex = new File(path).eachFile {
     }
     /* Log File */
 File file = new File("copy.log")
-file.write "$f File(s) copied.\n"
+file.write "[LOG]. $f File(s) copied.\n"
     /* console output log */
 println "[LOG]. $f File(s) copied"
 println ("Count of err extensions: $extension_err")
